@@ -1,0 +1,43 @@
+interface INGSIS {
+ String datos();
+}
+
+
+public class UTN {
+ public static void arr(Class<? extends INGSIS> generacion) throws Exception{
+   final INGSIS i = generacion.newInstance();
+   System.out.println(i.datos());
+ }
+ public static void main(String[] i) throws Exception {
+    arr(Cm.class);
+    arr(Gr.class);
+    arr(NdE.class);
+    arr(IdG.class);
+ }
+}
+class Cm implements INGSIS{
+   @Override
+   public String datos(){
+      return "2019-1";
+   }
+}
+class Gr implements INGSIS{
+   @Override
+   public String datos(){
+      return "901-ITIC";
+   }
+}
+
+class NdE implements INGSIS {
+ @Override
+ public String datos() {
+   return "IronHackers";
+ }
+}
+
+class IdG implements INGSIS {
+ @Override
+ public String datos() {
+   return "mmmm 23 1/2"+"(4)";
+ }
+}
