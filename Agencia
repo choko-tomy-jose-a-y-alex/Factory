@@ -1,0 +1,28 @@
+interface AGENCIA {
+ String clientes();
+}
+
+
+public class BARO {
+ public static void arr(Class<? extends AGENCIA> generacion) throws Exception{
+   final AGENCIA i = generacion.newInstance();
+   System.out.println(i.clientes());
+ }
+ public static void main(String[] i) throws Exception {
+    
+    arr(nissan.class);
+    arr(bugatti.class);
+ }
+}
+class nissan implements AGENCIA{
+   @Override
+   public String clientes(){
+      return "publico en general";
+   }
+}
+class bugatti implements AGENCIA{
+   @Override
+   public String clientes(){
+      return "publico mas exclusivo";
+   }
+}
