@@ -4,6 +4,13 @@ interface AGENCIA {
 
 
 public class BARO {
+  private static BARO cash;
+public static synchronized BARO getCash(){
+	if (cash==null){
+          cash = new BARO();
+	}
+   return cash;
+}
  public static void arr(Class<? extends AGENCIA> generacion) throws Exception{
    final AGENCIA i = generacion.newInstance();
    System.out.println(i.clientes());
@@ -26,3 +33,4 @@ class bugatti implements AGENCIA{
       return "publico mas exclusivo";
    }
 }
+
